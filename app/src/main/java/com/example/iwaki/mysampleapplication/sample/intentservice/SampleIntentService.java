@@ -15,17 +15,34 @@ public class SampleIntentService extends IntentService {
     // する必要がある。引数は文字列で何を渡してもかまわない。
     public SampleIntentService() {
         super(SampleIntentServiceActivity.class.getName());
-        // これでonStartCommand()のデフォルトの戻り値を変更している
-        setIntentRedelivery(true);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.i(TAG, "★onCreate: サービスが初期化されました");
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        super.onStartCommand(intent, flags, startId);
+
+        // Killされたときの動作を指定
+        // return START_STICKY;
+        return START_REDELIVER_INTENT;
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
         startedCount++;
 
+
         if (intent == null) {
             Log.i(TAG, "★onHandleIntent: intentにnullがわたってきました。startedCount = " + startedCount);
+        } else {
+            Log.i(TAG, "★onHandleIntent: time = " + intent.getLongExtra("start_time", 0));
         }
+        Log.i(TAG, "★onHandleIntent: startedCount = " + startedCount);
 
         try {
             Thread.sleep(2000);
@@ -33,7 +50,6 @@ public class SampleIntentService extends IntentService {
             e.printStackTrace();
         }
 
-        Log.i(TAG, "★onHandleIntent: startedCount = " + startedCount);
     }
 
     @Override

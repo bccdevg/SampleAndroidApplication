@@ -17,7 +17,9 @@ public class SampleIntentServiceActivity extends AppCompatActivity {
 
     // 画面上のボタン。サービスをスタートさせる
     public void onStartIntentServiceTapped(View view) {
-        startService(new Intent(this, SampleIntentService.class));
+        Intent intent = new Intent(this, SampleIntentService.class);
+        intent.putExtra("start_time", System.currentTimeMillis());
+        startService(intent);
     }
 
 }
