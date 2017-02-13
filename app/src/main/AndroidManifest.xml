@@ -20,7 +20,9 @@
 
         <service
             android:name=".sample.intentservice.SampleIntentService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <activity android:name=".sample.methodtime.MethodTimeCheckActivity"></activity>
     </application>
 
 </manifest>

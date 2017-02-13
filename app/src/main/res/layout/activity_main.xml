@@ -18,7 +18,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true">
+        android:layout_alignParentTop="true"
+        android:id="@+id/linearLayout">
 
         <Button
             android:text="GoToAsyncTaskSample"
@@ -34,4 +35,15 @@
             android:id="@+id/goToIntentServiceSample"
             android:onClick="onGoToIntentServiceSampleTapped" />
     </LinearLayout>
+
+    <Button
+        android:text="GoToMethodTimeCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/button3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onGoToMethodTimeCheckTapped" />
+
 </RelativeLayout>
