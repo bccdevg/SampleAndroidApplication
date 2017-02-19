@@ -22,4 +22,8 @@ public class SampleIntentServiceActivity extends AppCompatActivity {
         startService(intent);
     }
 
+    public void voidFunc(){
+
+    }
+
 }
