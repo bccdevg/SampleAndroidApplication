@@ -8,6 +8,7 @@ import android.view.View;
 import com.example.iwaki.mysampleapplication.sample.asynctask.SampleAsyncTaskActivity;
 import com.example.iwaki.mysampleapplication.sample.intentservice.SampleIntentServiceActivity;
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
+import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     // 画面上のボタン。MethodTimeCheckのサンプル画面へ遷移する
     public void onGoToMethodTimeCheckTapped(View view) {
         startActivity(new Intent(this, MethodTimeCheckActivity.class));
+    }
+
+    public void onGoToSQLiteSampleTapped(View view) {
+        startActivity(new Intent(this, SqliteSampleActivity.class));
     }
 
 }

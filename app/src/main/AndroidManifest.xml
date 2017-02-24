@@ -22,7 +22,8 @@
             android:name=".sample.intentservice.SampleIntentService"
             android:exported="false" />
 
-        <activity android:name=".sample.methodtime.MethodTimeCheckActivity"></activity>
+        <activity android:name=".sample.methodtime.MethodTimeCheckActivity" />
+        <activity android:name=".sample.sqlite.SqliteSampleActivity"></activity>
     </application>
 
 </manifest>
