@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // 画面上のボタン。一時的な動作確認画面へ遷移する
+    public void onGoAoTempTestTapped(View view) {
+        startActivity(new Intent(this, TempTestActivity.class));
+    }
+
     // 画面上のボタン。AsyncTaskのサンプル画面へ遷移する
     public void onGoToAsyncTaskSampleTapped(View view) {
         startActivity(new Intent(this, SampleAsyncTaskActivity.class));
@@ -49,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, SqliteSampleActivity.class));
     }
 
-    // 画面上のボタン。SQLiteSampleのサンプル画面へ遷移する
+    // 画面上のボタン。ListViewのサンプル画面へ遷移する
     public void onGoToListViewSampleTapped(View view) {
         startActivity(new Intent(this, ListViewSampleActivity.class));
     }
