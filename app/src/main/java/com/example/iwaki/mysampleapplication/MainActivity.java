@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.example.iwaki.mysampleapplication.sample.asynctask.SampleAsyncTaskActivity;
 import com.example.iwaki.mysampleapplication.sample.intentservice.SampleIntentServiceActivity;
+import com.example.iwaki.mysampleapplication.sample.listview.ListViewSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
 import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
 
@@ -33,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, MethodTimeCheckActivity.class));
     }
 
+    // 画面上のボタン。SQLiteSampleのサンプル画面へ遷移する
     public void onGoToSQLiteSampleTapped(View view) {
         startActivity(new Intent(this, SqliteSampleActivity.class));
+    }
+
+    // 画面上のボタン。SQLiteSampleのサンプル画面へ遷移する
+    public void onGoToListViewSampleTapped(View view) {
+        startActivity(new Intent(this, ListViewSampleActivity.class));
     }
 
 }
