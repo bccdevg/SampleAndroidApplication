@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.iwaki.mysampleapplication">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,6 +28,7 @@
         <activity android:name=".sample.methodtime.MethodTimeCheckActivity" />
         <activity android:name=".sample.sqlite.SqliteSampleActivity" />
         <activity android:name=".sample.listview.ListViewSampleActivity" />
+        <activity android:name=".sample.location.LocationSample1Activity"></activity>
     </application>
 
 </manifest>
