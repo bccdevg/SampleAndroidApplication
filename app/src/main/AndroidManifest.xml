@@ -29,7 +29,8 @@
         <activity android:name=".sample.sqlite.SqliteSampleActivity" />
         <activity android:name=".sample.listview.ListViewSampleActivity" />
         <activity android:name=".sample.location.LocationSample1Activity" />
-        <activity android:name=".TempTestActivity"></activity>
+        <activity android:name=".TempTestActivity" />
+        <activity android:name=".sample.notification.NotificationSample1Activity"></activity>
     </application>
 
 </manifest>

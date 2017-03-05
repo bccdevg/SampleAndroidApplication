@@ -15,6 +15,7 @@ import com.example.iwaki.mysampleapplication.sample.intentservice.SampleIntentSe
 import com.example.iwaki.mysampleapplication.sample.listview.ListViewSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.location.LocationSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
+import com.example.iwaki.mysampleapplication.sample.notification.NotificationSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
 
 import static android.R.attr.permission;
@@ -59,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, ListViewSampleActivity.class));
     }
 
+    // 画面上のボタン。Notificationのサンプル1画面へ遷移する
+    public void onNotificationSample1Tapped(View view) {
+        startActivity(new Intent(this, NotificationSample1Activity.class));
+    }
+
+
     // 画面上のボタン。LocationSample1のサンプル画面へ遷移する
     public void onGoToLocationSample1Tapped(View view) {
 
@@ -74,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 
     // パーミッション許諾画面表示後の処理
     @Override
