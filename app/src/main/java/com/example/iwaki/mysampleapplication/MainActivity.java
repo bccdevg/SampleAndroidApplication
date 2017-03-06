@@ -1,6 +1,5 @@
 package com.example.iwaki.mysampleapplication;
 
-import android.*;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -17,8 +16,7 @@ import com.example.iwaki.mysampleapplication.sample.location.LocationSample1Acti
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
 import com.example.iwaki.mysampleapplication.sample.notification.NotificationSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
-
-import static android.R.attr.permission;
+import com.example.iwaki.mysampleapplication.sample.wifi.WiFiSampleActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, NotificationSample1Activity.class));
     }
 
+    // 画面上のボタン。WiFiのサンプル1画面へ遷移する
+    public void onWiFiSampleTapped(View view) {
+        startActivity(new Intent(this, WiFiSampleActivity.class));
+    }
 
     // 画面上のボタン。LocationSample1のサンプル画面へ遷移する
     public void onGoToLocationSample1Tapped(View view) {
