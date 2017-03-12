@@ -30,16 +30,15 @@ public class WiFiSampleActivity extends AppCompatActivity {
 
         textView = (TextView) findViewById(R.id.textArea);
 
-
         handler = new Handler();
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // WiFiマネージャーの取得
-                wifiManager = (WifiManager) getSystemService(WIFI_SERVICE);
+                // WiFiマネージャーの取得。メモリリークを回避するためにアプリケーションコンテキストから取得する必要がある
+                wifiManager = (WifiManager) getApplicationContext().getSystemService(WIFI_SERVICE);
 
-                // 現在接続しているWiFiの情報を取得
+                // 現在接続しているWiFiの情報を取得。パーミッションACCESS_WIFI_STATE(normal)が必要
                 WifiInfo wifiInfo = wifiManager.getConnectionInfo();
 
                 StringBuilder stringBuilder = new StringBuilder();
@@ -57,8 +56,8 @@ public class WiFiSampleActivity extends AppCompatActivity {
                         .append("HiddenSSID : ").append(wifiInfo.getHiddenSSID()).append(ls).append(ls);
 
                 // 現在検知しているWiFiの一覧を取得
-                // Android6(Marshmallow)からは「ACCESS_FINE_LOCATION」または「ACCESS_COARSE_LOCATION」パーミッションが必要
-                // https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-hardware-id
+                // Android6(Marshmallow)からは位置情報のパーミッションである「ACCESS_FINE_LOCATION」または「ACCESS_COARSE_LOCATION」パーミッション(dengerous)が必要
+                // このパーミッションがないと、例外が発生するわけではないが、wifiManager.getScanResults()の結果が0になる
                 wifiManager.startScan();
 
                 stringBuilder.append("【検知しているWiFi一覧】").append(ls);
@@ -80,6 +79,7 @@ public class WiFiSampleActivity extends AppCompatActivity {
                 // 接続実績のあるWiFiの一覧を取得
                 stringBuilder.append("【接続実績のあるWiFi一覧】").append(ls);
 
+                // パーミッションACCESS_WIFI_STATE(normal)が必要
                 List<WifiConfiguration> configuredNetworks = wifiManager.getConfiguredNetworks();
                 for (WifiConfiguration nw : configuredNetworks) {
                     stringBuilder
@@ -133,6 +133,7 @@ public class WiFiSampleActivity extends AppCompatActivity {
                 wifiConfiguration.wepTxKeyIndex = 0;
 
                 // Configured neworksのリストに追加する
+                // Wi-Fiの接続状態を変更するには(追加、接続、切断 など)パーミッション CHANGE_WIFI_STATE(normal)が必要
                 int networkId = wifiManager.addNetwork(wifiConfiguration);
 
 
@@ -145,7 +146,7 @@ public class WiFiSampleActivity extends AppCompatActivity {
                 wifiManager.disconnect();
                 // 新規作成したネットワークを有効化する
                 wifiManager.enableNetwork(networkId, true);
-                // ↑へ接続を試みる　★↑とこの処理の違いは何？
+                // ↑へ接続を試みる。↑だけでも↑に自動接続されるが、reconnect()した方がすぐに接続される感じがする
                 wifiManager.reconnect();
 
             }
