@@ -4,9 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
@@ -35,7 +33,8 @@
         <activity android:name=".sample.location.LocationSample1Activity" />
         <activity android:name=".TempTestActivity" />
         <activity android:name=".sample.notification.NotificationSample1Activity" />
-        <activity android:name=".sample.wifi.WiFiSampleActivity"></activity>
+        <activity android:name=".sample.wifi.WiFiSampleActivity" />
+        <activity android:name=".sample.network.HttpURLConnectionSample1Activity"></activity>
     </application>
 
 </manifest>

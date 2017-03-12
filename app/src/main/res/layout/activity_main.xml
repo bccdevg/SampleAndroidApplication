@@ -104,4 +104,13 @@
         android:onClick="onWiFiSampleTapped"
         android:text="GoToWiFiSample" />
 
+    <Button
+        android:id="@+id/button13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="onHttpURLConnectionSample1Tapped"
+        android:text="GoToHttpURLConnectionSample1" />
+
 </RelativeLayout>

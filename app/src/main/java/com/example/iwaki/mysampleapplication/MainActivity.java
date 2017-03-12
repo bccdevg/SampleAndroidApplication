@@ -14,6 +14,7 @@ import com.example.iwaki.mysampleapplication.sample.intentservice.SampleIntentSe
 import com.example.iwaki.mysampleapplication.sample.listview.ListViewSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.location.LocationSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
+import com.example.iwaki.mysampleapplication.sample.network.HttpURLConnectionSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.notification.NotificationSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.wifi.WiFiSampleActivity;
@@ -67,6 +68,12 @@ public class MainActivity extends AppCompatActivity {
     public void onWiFiSampleTapped(View view) {
         startActivity(new Intent(this, WiFiSampleActivity.class));
     }
+
+    // 画面上のボタン。HttpURLConnectionのサンプル1画面へ遷移する
+    public void onHttpURLConnectionSample1Tapped(View view) {
+        startActivity(new Intent(this, HttpURLConnectionSample1Activity.class));
+    }
+
 
     // 画面上のボタン。LocationSample1のサンプル画面へ遷移する
     public void onGoToLocationSample1Tapped(View view) {
