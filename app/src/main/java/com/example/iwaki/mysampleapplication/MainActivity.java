@@ -16,6 +16,7 @@ import com.example.iwaki.mysampleapplication.sample.location.LocationSample1Acti
 import com.example.iwaki.mysampleapplication.sample.methodtime.MethodTimeCheckActivity;
 import com.example.iwaki.mysampleapplication.sample.network.HttpURLConnectionSample1Activity;
 import com.example.iwaki.mysampleapplication.sample.notification.NotificationSample1Activity;
+import com.example.iwaki.mysampleapplication.sample.security.KeyStoreSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.sqlite.SqliteSampleActivity;
 import com.example.iwaki.mysampleapplication.sample.wifi.WiFiSampleActivity;
 
@@ -72,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
     // 画面上のボタン。HttpURLConnectionのサンプル1画面へ遷移する
     public void onHttpURLConnectionSample1Tapped(View view) {
         startActivity(new Intent(this, HttpURLConnectionSample1Activity.class));
+    }
+
+    // 画面上のボタン。KeyStoreSampleActivity画面へ遷移する
+    public void onKeyStoreSampleTapped(View view) {
+        startActivity(new Intent(this, KeyStoreSampleActivity.class));
     }
 
 

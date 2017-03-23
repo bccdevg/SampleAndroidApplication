@@ -11,7 +11,6 @@
     tools:context="com.example.iwaki.mysampleapplication.MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -19,7 +18,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:id="@+id/linearLayout">
+        android:id="@+id/linearLayout"
+        android:orientation="vertical">
 
         <Button
             android:text="GoToTempTest"
@@ -29,6 +29,15 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/button9"
             android:onClick="onGoAoTempTestTapped" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button13"
+            android:onClick="onKeyStoreSampleTapped"
+            android:text="GoToAndroidKeyStoreSample" />
 
         <Button
             android:text="GoToAsyncTaskSample"
@@ -108,9 +117,9 @@
         android:id="@+id/button13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:onClick="onHttpURLConnectionSample1Tapped"
-        android:text="GoToHttpURLConnectionSample1" />
+        android:text="GoToHttpURLConnectionSample1"
+        android:layout_below="@+id/button12"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

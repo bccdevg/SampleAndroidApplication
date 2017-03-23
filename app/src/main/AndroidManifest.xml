@@ -35,6 +35,7 @@
         <activity android:name=".sample.notification.NotificationSample1Activity" />
         <activity android:name=".sample.wifi.WiFiSampleActivity" />
         <activity android:name=".sample.network.HttpURLConnectionSample1Activity"></activity>
+        <activity android:name=".sample.security.KeyStoreSampleActivity"></activity>
     </application>
 
 </manifest>
